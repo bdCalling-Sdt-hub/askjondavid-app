@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:luxury_car_service/Utils/AppColors/app_colors.dart';
 import 'package:luxury_car_service/Utils/AppImg/app_img.dart';
 import 'package:luxury_car_service/Utils/Texts/text_style.dart';
+import 'package:luxury_car_service/core/app_route/app_route.dart';
 import 'package:luxury_car_service/view/module/common/auth/auth_widgets/app_logo_widget.dart';
 import 'package:luxury_car_service/view/module/common/auth/auth_widgets/custom_button.dart';
 import 'package:luxury_car_service/view/module/common/auth/controller/auth_controller.dart';
@@ -88,7 +89,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       // Remember Me and Forgot Password
                       GestureDetector(
                         onTap: () {
-                          // Get.toNamed(AppRoute.forgotPassword);
+                          Get.toNamed(AppRoute.forgotPassword);
                         },
                         child: Align(
                           alignment: Alignment.centerRight,
@@ -180,7 +181,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
-                        // Get.toNamed(AppRoute.signUpScreen);
+                        Get.toNamed(AppRoute.createAccount);
                       },
                   ),
                 ],

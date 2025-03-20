@@ -57,6 +57,7 @@ dependencies:
   font_awesome_flutter:
   socket_io_client: ^3.0.2
   eva_icons_flutter:
+  pin_code_fields:
 
 dev_dependencies:
   flutter_test:
@@ -84,6 +85,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/onboarding/
+    - assets/images/auth/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -12,7 +12,10 @@ class AppImages {
   static const String buttonBg = "$basePath/onboarding/button_bg.png";
 
 
-///====================== HomePage Image =========================
+///====================== Auth Image =========================
+  static const String forgotPassword = "$basePath/auth/forgot_password.png";
+  static const String createNewPassword = "$basePath/auth/create_new_password.png";
+  static const String verifyAccount = "$basePath/auth/verify_account.png";
 
 
 }
