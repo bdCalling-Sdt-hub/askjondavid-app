@@ -9,6 +9,7 @@ import 'package:luxury_car_service/view/module/common/home_screen.dart';
 import 'package:luxury_car_service/view/module/common/onboarding/view/onboarding_screen.dart';
 import 'package:luxury_car_service/view/module/common/splash/screen_one.dart';
 import 'package:luxury_car_service/view/module/common/splash/screen_two.dart';
+import 'package:luxury_car_service/view/module/customer/home/view/landing_screen.dart';
 
 
 class AppRoute {
@@ -23,6 +24,7 @@ class AppRoute {
   static const String accountVerify = "/account_verify";
   static const String createPassword = "/create_password";
   static const String createAccount = "/create_account";
+  static const String landingScreen = "/landing_screen";
 
 
   static List<GetPage> routes = [
@@ -38,6 +40,10 @@ class AppRoute {
     GetPage(name: accountVerify, page: () => const AccountVerify(), binding: DependencyInjection()),
     GetPage(name: createPassword, page: () => const CreatePassword(), binding: DependencyInjection()),
     GetPage(name: createAccount, page: () => const CreateAccountScreen(), binding: DependencyInjection()),
+    GetPage(name: signInScreen, page: () => const SignInScreen(), binding: DependencyInjection()),
+
+    ///===================== Home Routes ========================
+    GetPage(name: landingScreen, page: () => LandingScreen(), binding: DependencyInjection()),
 
   ];
 }

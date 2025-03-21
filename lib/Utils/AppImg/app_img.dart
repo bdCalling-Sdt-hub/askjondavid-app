@@ -12,10 +12,14 @@ class AppImages {
   static const String buttonBg = "$basePath/onboarding/button_bg.png";
 
 
-///====================== Auth Image =========================
+  ///====================== Auth Image =========================
   static const String forgotPassword = "$basePath/auth/forgot_password.png";
   static const String createNewPassword = "$basePath/auth/create_new_password.png";
   static const String verifyAccount = "$basePath/auth/verify_account.png";
 
-
+  ///====================== Home Image =========================
+  static const String bookingSvg = "$basePath/home/booking.svg";
+  static const String chatSvg = "$basePath/home/chat.svg";
+  static const String homeSvg = "$basePath/home/home.svg";
+  static const String profileSvg = "$basePath/home/profile.svg";
 }
