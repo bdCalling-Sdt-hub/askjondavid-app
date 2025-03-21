@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class CommonHomeScreen extends StatelessWidget {
+  const CommonHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -31,7 +31,7 @@ class AppRoute {
     ///==================== Initial Routes ====================
     GetPage(name: splashScreenOne, page: () => const SplashScreenOne()),
     GetPage(name: splashScreenTwo, page: () => const SplashScreenTwo()),
-    GetPage(name: homeScreen, page: () => const HomeScreen()),
+    GetPage(name: homeScreen, page: () => const CommonHomeScreen()),
     GetPage(name: onboardingScreen, page: () => const OnboardingScreen(), binding: DependencyInjection()),
 
     ///===================== Auth Routes ========================
@@ -44,6 +44,5 @@ class AppRoute {
 
     ///===================== Home Routes ========================
     GetPage(name: landingScreen, page: () => LandingScreen(), binding: DependencyInjection()),
-
   ];
 }

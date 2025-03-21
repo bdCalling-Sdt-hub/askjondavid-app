@@ -5,7 +5,9 @@ import 'package:get/get.dart';
 import 'package:luxury_car_service/Utils/AppColors/app_colors.dart';
 import 'package:luxury_car_service/Utils/AppImg/app_img.dart';
 import 'package:luxury_car_service/Utils/Texts/text_style.dart';
+import 'package:luxury_car_service/view/module/common/home_screen.dart';
 import 'package:luxury_car_service/view/module/customer/home/controller/home_controller.dart';
+import 'package:luxury_car_service/view/module/customer/home/view/home_screen.dart';
 import 'package:luxury_car_service/view/widgets/custom_sizedbox/custom_sizedbox.dart';
 
 class LandingScreen extends StatelessWidget {
@@ -33,7 +35,7 @@ class LandingScreen extends StatelessWidget {
           return IndexedStack(
             index: _homeController.currentIndex.value,
             children: [
-              Center(child: Text('Screen 1')),
+              HomeScreen(),
               Center(child: Text('Screen 2')),
               Center(child: Text('Screen 3')),
               Center(child: Text('Screen 4')),
