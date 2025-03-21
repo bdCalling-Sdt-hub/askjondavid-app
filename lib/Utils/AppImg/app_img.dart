@@ -27,4 +27,5 @@ class AppImages {
   static const String bespoke = "$basePath/home/bespoke.png";
   static const String privateDriver = "$basePath/home/private_driver.png";
   static const String securityPerson = "$basePath/home/security_person.png";
+  static const String bookingAssistant = "$basePath/home/booking_assistant.svg";
 }

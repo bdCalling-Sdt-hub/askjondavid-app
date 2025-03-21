@@ -10,6 +10,7 @@ import 'package:luxury_car_service/view/module/common/onboarding/view/onboarding
 import 'package:luxury_car_service/view/module/common/splash/screen_one.dart';
 import 'package:luxury_car_service/view/module/common/splash/screen_two.dart';
 import 'package:luxury_car_service/view/module/customer/home/view/landing_screen.dart';
+import 'package:luxury_car_service/view/module/customer/home/view/service/bespoke_service/bespoke_service.dart';
 
 
 class AppRoute {
@@ -25,6 +26,7 @@ class AppRoute {
   static const String createPassword = "/create_password";
   static const String createAccount = "/create_account";
   static const String landingScreen = "/landing_screen";
+  static const String bespokeScreen = "/basepoke_screen";
 
 
   static List<GetPage> routes = [
@@ -44,5 +46,6 @@ class AppRoute {
 
     ///===================== Home Routes ========================
     GetPage(name: landingScreen, page: () => LandingScreen(), binding: DependencyInjection()),
+    GetPage(name: bespokeScreen, page: () => BespokeServiceScreen(), binding: DependencyInjection()),
   ];
 }

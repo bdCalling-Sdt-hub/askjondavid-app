@@ -46,8 +46,9 @@ class LandingScreen extends StatelessWidget {
         bottomNavigationBar: Container(
           margin: EdgeInsets.all(width * 0.02),
           height: width * 0.190, // use width for perfect size
+          width: double.infinity,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: List.generate(4, (index) {
               return InkWell(
                 onTap: () {
@@ -59,15 +60,18 @@ class LandingScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Obx(() {
-                      return AnimatedContainer(
-                        duration: Duration(milliseconds: 300),
-                        curve: Curves.fastLinearToSlowEaseIn,
-                        width: 80.w,
-                        height: index == _homeController.currentIndex.value ?4.h : 0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFDBCC93),
-                          borderRadius: BorderRadius.vertical(
-                            bottom: Radius.circular(10),
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal:  8.0),
+                        child: AnimatedContainer(
+                          duration: Duration(milliseconds: 300),
+                          curve: Curves.fastLinearToSlowEaseIn,
+                          width: 65.w,
+                          height: index == _homeController.currentIndex.value ?4.h : 0,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFDBCC93),
+                            borderRadius: BorderRadius.vertical(
+                              bottom: Radius.circular(10),
+                            ),
                           ),
                         ),
                       );
