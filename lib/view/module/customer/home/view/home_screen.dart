@@ -45,9 +45,13 @@ class HomeScreen extends StatelessWidget {
                         Get.toNamed(AppRoute.bespokeScreen);
                       }),
                       HeightGap(height: 16),
-                      ServiceCartWidget(image: AppImages.privateDriver, text: "Private drivers",onTap: (){}),
+                      ServiceCartWidget(image: AppImages.privateDriver, text: "Private drivers",onTap: (){
+                        Get.toNamed(AppRoute.privateDriver);
+                      }),
                       HeightGap(height: 16),
-                      ServiceCartWidget(image: AppImages.securityPerson, text: "Security personnel management",onTap: (){}),
+                      ServiceCartWidget(image: AppImages.securityPerson, text: "Security personnel management",onTap: (){
+                        Get.toNamed(AppRoute.securityPersonnelManagement);
+                      }),
                     ],
                   ),
                 ),

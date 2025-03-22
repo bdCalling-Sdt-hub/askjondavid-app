@@ -5,9 +5,12 @@ import 'package:luxury_car_service/Utils/AppColors/app_colors.dart';
 import 'package:luxury_car_service/Utils/AppImg/app_img.dart';
 import 'package:luxury_car_service/Utils/StaticString/static_string.dart';
 import 'package:luxury_car_service/Utils/Texts/text_style.dart';
+import 'package:luxury_car_service/core/app_route/app_route.dart';
+import 'package:luxury_car_service/view/module/common/auth/auth_widgets/custom_button.dart';
 import 'package:luxury_car_service/view/module/common/auth/controller/auth_controller.dart';
 import 'package:luxury_car_service/view/module/customer/home/home_widget/svg_picture.dart';
 import 'package:luxury_car_service/view/widgets/custom_sizedbox/custom_sizedbox.dart';
+
 class BespokeServiceScreen extends StatelessWidget {
   const BespokeServiceScreen({super.key});
 
@@ -20,82 +23,119 @@ class BespokeServiceScreen extends StatelessWidget {
           height: double.infinity,
           width: double.infinity,
           decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(AppImages.backgroundImage),
-              fit: BoxFit.cover
-            )
-          ),
+              image: DecorationImage(
+                  image: AssetImage(AppImages.backgroundImage),
+                  fit: BoxFit.cover)),
           child: Column(
             children: [
+              HeightGap(height: 10),
               Row(
                 children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back_ios_sharp, size: 20, color: AppColors.appGrayColor)),
+                  IconButton(
+                      onPressed: () {
+                        Get.back();
+                      },
+                      icon: Icon(Icons.arrow_back_ios_sharp,
+                          size: 20, color: AppColors.appGrayColor)),
                   Expanded(
                     child: Center(
-                      child: Text("Bespoke service", style: TextStyles.regular24.copyWith(
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.textGreyColor
-                      ),),
+                      child: Text(
+                        "Bespoke service",
+                        style: TextStyles.regular24.copyWith(
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.textGreyColor),
+                      ),
                     ),
                   ),
                 ],
               ),
               HeightGap(height: 16),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(AppString.bespokeDescription, style: TextStyles.regular12.copyWith(
-                      fontWeight: FontWeight.w400),
-                      textAlign: TextAlign.justify,
-                    ),
-                    HeightGap(height: 20),
-                    Text(
-                      'Luxury car',
-                      style: TextStyles.regular16.copyWith(
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFFC7BA86)
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              HeightGap(height: 8),
-              SizedBox(
-                height: 400.h,
-                child: ListView.separated(
-                  padding: EdgeInsets.all(16),
-                  itemCount: 4,
-                  itemBuilder: (context, index){
-                      return BespokeCartWidget(
-                        image: "https://cdn.pixabay.com/photo/2022/07/22/19/34/car-7338818_1280.jpg",
-                        name: "Ethan Micheal",
-                        carModel: "Ferrari 365",
-                      );
-                    },
-                  separatorBuilder: (_,__){
-                    return HeightGap(height: 10);
-                  },
-                ),
-              ),
-              HeightGap(height: 24),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Container(
-                  height: 52.h,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.r),
-                    color: Color(0xFF18181A)
-                  ),
-                  child: Row(
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
                     children: [
-                      SvgPictureWidget(imageUrl: AppImages.bookingAssistant, height: 15.h, width: 13.w,),
-                      Text("Booking your assistant number",style: TextStyles.regular16.copyWith(
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.textGreyColor,
-                      ),)
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              AppString.bespokeDescription,
+                              style: TextStyles.regular12
+                                  .copyWith(fontWeight: FontWeight.w400),
+                              textAlign: TextAlign.justify,
+                            ),
+                            HeightGap(height: 20),
+                            Text(
+                              'Luxury car',
+                              style: TextStyles.regular16.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xFFC7BA86)),
+                            ),
+                          ],
+                        ),
+                      ),
+                      HeightGap(height: 8),
+                      SizedBox(
+                        height: 400.h,
+                        child: ListView.separated(
+                          padding: EdgeInsets.all(16),
+                          itemCount: 4,
+                          itemBuilder: (context, index) {
+                            return BespokeCartWidget(
+                              image: "https://cdn.pixabay.com/photo/2022/07/22/19/34/car-7338818_1280.jpg",
+                              name: "Ethan Micheal",
+                              carModel: "Ferrari 365",
+                            );
+                          },
+                          separatorBuilder: (_, __) {
+                            return HeightGap(height: 10);
+                          },
+                        ),
+                      ),
+                      HeightGap(height: 24),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Container(
+                          height: 52.h,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.r),
+                              color: Color(0xFF18181A)),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                            child: Row(
+                              children: [
+                                SvgPictureWidget(
+                                  imageUrl: AppImages.bookingAssistant,
+                                  height: 18.h,
+                                  width: 15.w,
+                                ),
+                                WidthGap(width: 8),
+                                Text(
+                                  "Booking your assistant number",
+                                  style: TextStyles.regular16.copyWith(
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColors.textGreyColor,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+
+
+                      /// Next Button
+                      Padding(
+                        padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
+                        child: Align(
+                          alignment: Alignment.bottomCenter,
+                            child: CustomButton(text: "Next", onTap:(){
+                              Get.toNamed(AppRoute.bespokeServiceDetailsScreen);
+                            })),
+                      ),
                     ],
                   ),
                 ),
@@ -107,10 +147,12 @@ class BespokeServiceScreen extends StatelessWidget {
     );
   }
 }
+
 class BespokeCartWidget extends StatelessWidget {
   final String image;
   final String name;
   final String carModel;
+
   const BespokeCartWidget({
     super.key,
     required this.image,
@@ -168,7 +210,7 @@ class BespokeCartWidget extends StatelessWidget {
                   Text(
                     name,
                     style: TextStyles.regular16.copyWith(
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w500,
                       color: AppColors.textGreyColor,
                     ),
@@ -178,7 +220,7 @@ class BespokeCartWidget extends StatelessWidget {
                       Text(
                         "Car Model: ",
                         style: TextStyles.regular16.copyWith(
-                          fontSize: 12,
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
                           color: AppColors.textGreyColor,
                         ),
@@ -186,7 +228,7 @@ class BespokeCartWidget extends StatelessWidget {
                       Text(
                         carModel,
                         style: TextStyles.regular16.copyWith(
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
                           color: AppColors.textGreyColor,
                         ),
@@ -199,53 +241,59 @@ class BespokeCartWidget extends StatelessWidget {
           ),
         ),
         Positioned(
-          bottom: 16.h,
-          right: 12.w,
-          child: Obx((){
-            final authController = Get.find<AuthController>();
-            return GestureDetector(
-              onTap: (){
-                authController.toggleCheckbox();
-              },
-              child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
-                  width: 20,
-                  height: 20,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                          color:Color(0xFFC7BA86),
-                          width: 1.5)),
-                  child:Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child:authController.isChecked.value? Container(
-                      height: 4,
-                      width: 4,
+            bottom: 16.h,
+            right: 12.w,
+            child: Obx(
+              () {
+                final authController = Get.find<AuthController>();
+                return GestureDetector(
+                  onTap: () {
+                    authController.toggleCheckbox();
+                  },
+                  child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 200),
+                      width: 20,
+                      height: 20,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Color(0xFFC7BA86)),
-                    ):null,
-                  )
-              ),
-            );
-          },
-          )
-        ),
+                          shape: BoxShape.circle,
+                          border:
+                              Border.all(color: Color(0xFFC7BA86), width: 1.5)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: authController.isChecked.value
+                            ? Container(
+                                height: 4,
+                                width: 4,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Color(0xFFC7BA86)),
+                              )
+                            : null,
+                      )),
+                );
+              },
+            )),
         Positioned(
-          top: 16.h,
-          right: 12.w,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Icon(Icons.star, color: Color(0xFFF8B13D), size: 14,),
-              WidthGap(width: 3),
-              Text('4.5', style: TextStyles.regular12.copyWith(
-                fontWeight: FontWeight.w500
-              ),)
-            ],
-          )
-        ),
+            top: 16.h,
+            right: 12.w,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Icon(
+                  Icons.star,
+                  color: Color(0xFFF8B13D),
+                  size: 14,
+                ),
+                WidthGap(width: 3),
+                Text(
+                  '4.5',
+                  style: TextStyles.regular12
+                      .copyWith(fontWeight: FontWeight.w500),
+                )
+              ],
+            )),
       ],
     );
   }
 }
+

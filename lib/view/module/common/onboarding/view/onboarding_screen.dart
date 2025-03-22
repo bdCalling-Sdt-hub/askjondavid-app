@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:luxury_car_service/Utils/AppColors/app_colors.dart';
 import 'package:luxury_car_service/Utils/AppImg/app_img.dart';
@@ -58,7 +59,7 @@ class OnboardingScreen extends StatelessWidget {
           ),
           // Bottom indicator
           Positioned(
-            bottom: 150,
+            bottom: 150.h,
             left: 0,
             right: 0,
             child: Obx(() {

@@ -19,12 +19,12 @@ class OnboardingController extends GetxController {
 
   // Method to skip the onboarding
   void skip(){
-    Get.toNamed(AppRoute.homeScreen);
+    Get.toNamed(AppRoute.landingScreen);
   }
 
   // Method to complete onboarding and navigate to the main screen
   void completeOnBoarding(){
-    Get.toNamed(AppRoute.homeScreen);
+    Get.toNamed(AppRoute.landingScreen);
   }
 
 

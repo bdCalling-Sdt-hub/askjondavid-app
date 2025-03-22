@@ -58,6 +58,8 @@ dependencies:
   socket_io_client: ^3.0.2
   eva_icons_flutter:
   pin_code_fields:
+  google_maps_flutter:
+  location:
 
 dev_dependencies:
   flutter_test:
