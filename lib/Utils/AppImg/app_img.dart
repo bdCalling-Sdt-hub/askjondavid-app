@@ -28,4 +28,10 @@ class AppImages {
   static const String privateDriver = "$basePath/home/private_driver.png";
   static const String securityPerson = "$basePath/home/security_person.png";
   static const String bookingAssistant = "$basePath/home/booking_assistant.svg";
+
+  ///====================== Booking Image =========================
+  static const String car = "$basePath/booking/car.svg";
+  static const String calendar = "$basePath/booking/calendar.svg";
+  static const String clock = "$basePath/booking/clock.svg";
+  static const String location = "$basePath/booking/location.svg";
 }

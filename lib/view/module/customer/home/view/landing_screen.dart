@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:luxury_car_service/Utils/AppColors/app_colors.dart';
 import 'package:luxury_car_service/Utils/AppImg/app_img.dart';
 import 'package:luxury_car_service/Utils/Texts/text_style.dart';
+import 'package:luxury_car_service/view/module/customer/booking/view/booking.dart';
 import 'package:luxury_car_service/view/module/customer/home/controller/home_controller.dart';
 import 'package:luxury_car_service/view/module/customer/home/view/home_screen.dart';
 import 'package:luxury_car_service/view/widgets/custom_sizedbox/custom_sizedbox.dart';
@@ -35,7 +36,7 @@ class LandingScreen extends StatelessWidget {
             index: _homeController.currentIndex.value,
             children: [
               HomeScreen(),
-              Center(child: Text('Screen 2')),
+              BookingScreen(),
               Center(child: Text('Screen 3')),
               Center(child: Text('Screen 4')),
             ],

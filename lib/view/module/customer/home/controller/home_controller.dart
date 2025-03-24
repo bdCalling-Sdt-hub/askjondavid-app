@@ -30,6 +30,28 @@ class HomeController extends GetxController{
     update();
   }
 
+  ///====== Booking Tab Bar==============
+  RxInt bookingTabSelectedIndex = 0.obs;
+
+  // String get currentStatus {
+  //   switch (selectedIndex) {
+  //     case 0:
+  //       return "index 0";
+  //     case 1:
+  //       return "index 1";
+  //     default:
+  //       return "index 2";
+  //   }
+  // }
+
+  RxInt bookingTabIndex=0.obs;
+  void updatedBookingTabSelectedIndex(int index) {
+    bookingTabSelectedIndex.value = index;
+    bookingTabIndex.value=index;
+    update();
+  }
+
+
   ///====== Google map ===========
 
   late GoogleMapController mapController;

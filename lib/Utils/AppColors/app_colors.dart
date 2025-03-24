@@ -8,6 +8,7 @@ class AppColors {
   static const Color appBg = Color(0xff0c0b0e);
   static const Color primaryColor = Color(0xFFDBCC93);
   static const Color textGreyColor = Color(0xFFDBDBDB);
+  static const Color textBlackColor = Color(0xFF121212);
   static const Color appGrayColor = Color(0xFFDBDBDB);
 
   ///< ========================== This is for the navy blue ====================>

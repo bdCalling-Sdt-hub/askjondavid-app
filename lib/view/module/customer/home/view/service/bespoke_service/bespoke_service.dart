@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:luxury_car_service/Global/widgets/custom_app_bar.dart';
 import 'package:luxury_car_service/Utils/AppColors/app_colors.dart';
 import 'package:luxury_car_service/Utils/AppImg/app_img.dart';
 import 'package:luxury_car_service/Utils/StaticString/static_string.dart';
@@ -29,26 +30,7 @@ class BespokeServiceScreen extends StatelessWidget {
           child: Column(
             children: [
               HeightGap(height: 10),
-              Row(
-                children: [
-                  IconButton(
-                      onPressed: () {
-                        Get.back();
-                      },
-                      icon: Icon(Icons.arrow_back_ios_sharp,
-                          size: 20, color: AppColors.appGrayColor)),
-                  Expanded(
-                    child: Center(
-                      child: Text(
-                        "Bespoke service",
-                        style: TextStyles.regular24.copyWith(
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.textGreyColor),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              CustomAppBar(onTap: (){Get.back();}, title: "Bespoke service",),
               HeightGap(height: 16),
               Expanded(
                 child: SingleChildScrollView(
