@@ -9,6 +9,7 @@ import 'package:luxury_car_service/view/module/common/onboarding/view/onboarding
 import 'package:luxury_car_service/view/module/common/splash/screen_one.dart';
 import 'package:luxury_car_service/view/module/common/splash/screen_two.dart';
 import 'package:luxury_car_service/view/module/customer/booking/view/order_details.dart';
+import 'package:luxury_car_service/view/module/customer/booking/view/review_screen.dart';
 import 'package:luxury_car_service/view/module/customer/home/view/landing_screen.dart';
 import 'package:luxury_car_service/view/module/customer/home/view/service/bespoke_service/bespoke_service.dart';
 import 'package:luxury_car_service/view/module/customer/home/view/service/bespoke_service/bespoke_service_details.dart';
@@ -37,6 +38,7 @@ class AppRoute {
   static const String securityPersonnelManagement = "/security_persional_management";
   static const String securityPersonnelDetails = "/security_personnel_details";
   static const String orderDetails = "/order_details";
+  static const String reviewScreen = "/review_screen";
 
 
   static List<GetPage> routes = [
@@ -64,5 +66,6 @@ class AppRoute {
 
     ///===================== Booking Routes ========================
     GetPage(name: orderDetails, page: () => OrderDetailsScreen(), binding: DependencyInjection()),
+    GetPage(name: reviewScreen, page: () => ReviewScreen(), binding: DependencyInjection()),
   ];
 }
