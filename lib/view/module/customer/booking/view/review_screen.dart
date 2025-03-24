@@ -80,6 +80,27 @@ class ReviewScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              Spacer(),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Container(
+                  height: 52.h,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.r),
+                    image: DecorationImage(
+                      image: AssetImage(AppImages.buttonBg),
+                      fit: BoxFit.cover
+                    ),
+                  ),
+                  child: Center(
+                    child: Text('Submit', style: TextStyles.regular20.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF101010)
+                    ),),
+                  ),
+                ),
+              )
             ],
           ),
         ),
