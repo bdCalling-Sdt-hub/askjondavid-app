@@ -34,6 +34,7 @@ class ReviewScreen extends StatelessWidget {
                 color: Color(0xFF606060)
               )),
               HeightGap(height: 16),
+              // Rating bar
               RatingBar.builder(
                 initialRating: 3,
                 minRating: 1,
@@ -46,6 +47,7 @@ class ReviewScreen extends StatelessWidget {
                   color: Colors.amber,
                 ),
                 onRatingUpdate: (rating) {
+                  debugPrint("============= Rating *================================");
                   print(rating);
                 },
               ),
@@ -61,6 +63,7 @@ class ReviewScreen extends StatelessWidget {
                 ),
               ),
               HeightGap(height: 8),
+              // text field
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
@@ -81,6 +84,7 @@ class ReviewScreen extends StatelessWidget {
                 ),
               ),
               Spacer(),
+              // Submit button
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Container(

@@ -5,6 +5,7 @@ import 'package:luxury_car_service/view/module/common/auth/view/create_account.d
 import 'package:luxury_car_service/view/module/common/auth/view/create_password.dart';
 import 'package:luxury_car_service/view/module/common/auth/view/forgot_password.dart';
 import 'package:luxury_car_service/view/module/common/auth/view/sign_in_screen.dart';
+import 'package:luxury_car_service/view/module/common/chat_screen.dart';
 import 'package:luxury_car_service/view/module/common/onboarding/view/onboarding_screen.dart';
 import 'package:luxury_car_service/view/module/common/splash/screen_one.dart';
 import 'package:luxury_car_service/view/module/common/splash/screen_two.dart';
@@ -39,6 +40,7 @@ class AppRoute {
   static const String securityPersonnelDetails = "/security_personnel_details";
   static const String orderDetails = "/order_details";
   static const String reviewScreen = "/review_screen";
+  static const String messageScreen = "/message_screen";
 
 
   static List<GetPage> routes = [
@@ -67,5 +69,8 @@ class AppRoute {
     ///===================== Booking Routes ========================
     GetPage(name: orderDetails, page: () => OrderDetailsScreen(), binding: DependencyInjection()),
     GetPage(name: reviewScreen, page: () => ReviewScreen(), binding: DependencyInjection()),
+
+    ///===================== Chat Screen ===========================
+    GetPage(name: messageScreen, page: () => MessageScreen(), binding: DependencyInjection()),
   ];
 }
