@@ -10,6 +10,8 @@ import 'package:luxury_car_service/core/app_route/app_route.dart';
 import 'package:luxury_car_service/view/module/common/auth/auth_widgets/app_logo_widget.dart';
 import 'package:luxury_car_service/view/module/common/auth/auth_widgets/custom_button.dart';
 import 'package:luxury_car_service/view/module/common/auth/controller/auth_controller.dart';
+import 'package:luxury_car_service/view/module/customer/booking/view/tabs/pending.dart';
+import 'package:luxury_car_service/view/module/customer/home/view/packages_screen.dart';
 import 'package:luxury_car_service/view/widgets/custom_sizedbox/custom_sizedbox.dart';
 import 'package:luxury_car_service/view/widgets/custom_text_field/custom_text_field.dart';
 
@@ -161,7 +163,8 @@ class _SignInScreenState extends State<SignInScreen> {
           children: [
             CustomButton(text: 'Sign In', onTap: (){
               if(signInFormKey.currentState!.validate()){
-                Get.offAllNamed(AppRoute.landingScreen);
+                // Get.offAllNamed(AppRoute.landingScreen);
+                Get.to(()=>PackagesScreen());
               }
             },),
             HeightGap(height: 20),
