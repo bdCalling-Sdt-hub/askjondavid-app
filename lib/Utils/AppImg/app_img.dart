@@ -50,4 +50,6 @@ class AppImages {
   static const String subscription = "$basePath/profile/subs_cription.svg";
   static const String setting = "$basePath/profile/settings.svg";
   static const String logout = "$basePath/profile/logout.svg";
+  static const String inclusion = "$basePath/profile/inclusion.svg";
+  static const String benifit = "$basePath/profile/benifit.svg";
 }
