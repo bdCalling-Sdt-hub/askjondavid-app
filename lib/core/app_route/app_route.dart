@@ -18,6 +18,9 @@ import 'package:luxury_car_service/view/module/customer/home/view/service/privat
 import 'package:luxury_car_service/view/module/customer/home/view/service/private_driver/reliable_transportation.dart';
 import 'package:luxury_car_service/view/module/customer/home/view/service/security_personnel_management/security_personnel_details.dart';
 import 'package:luxury_car_service/view/module/customer/home/view/service/security_personnel_management/security_personnel_management.dart';
+import 'package:luxury_car_service/view/module/customer/profile/edit_profile.dart';
+import 'package:luxury_car_service/view/module/customer/profile/personal_information.dart';
+import 'package:luxury_car_service/view/module/customer/profile/subscription.dart';
 
 
 class AppRoute {
@@ -41,6 +44,9 @@ class AppRoute {
   static const String orderDetails = "/order_details";
   static const String reviewScreen = "/review_screen";
   static const String messageScreen = "/message_screen";
+  static const String personalInformation = "/personal_information";
+  static const String editProfile = "/edit_profile";
+  static const String subscription = "/subscripton";
 
 
   static List<GetPage> routes = [
@@ -72,5 +78,11 @@ class AppRoute {
 
     ///===================== Chat Screen ===========================
     GetPage(name: messageScreen, page: () => MessageScreen(), binding: DependencyInjection()),
+
+    ///===================== Personal Information===================
+    GetPage(name: personalInformation, page: () => PersonalInformation(), binding: DependencyInjection()),
+    GetPage(name: editProfile, page: () => EditProfile(), binding: DependencyInjection()),
+    GetPage(name: subscription, page: () => Subscription(), binding: DependencyInjection()),
+
   ];
 }

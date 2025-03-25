@@ -30,6 +30,7 @@ class TextStyles {
   static TextStyle regular16Thin400 = GoogleFonts.nunito(
       fontSize: 16, color: AppColors.white50, fontWeight: FontWeight.w400);
 
+  static final regular32 = regular16.copyWith(fontSize: 32.sp);
   static final regular28 = regular16.copyWith(fontSize: 28.sp);
   static final regular24 = regular16.copyWith(fontSize: 24.sp);
   static final regular22 = regular16.copyWith(fontSize: 22.sp);
