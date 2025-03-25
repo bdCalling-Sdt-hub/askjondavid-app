@@ -39,4 +39,15 @@ class AppImages {
   static const String fileSvgIcon = "$basePath/chat/file_icon.svg";
   static const String sentSvgIcon = "$basePath/chat/sent_icon.svg";
   static const String videoSvgIcon = "$basePath/chat/video_call_icon.svg";
+
+  ///====================== Profile Image =========================
+  static const String editIcon = "$basePath/profile/edit_icon.svg";
+  static const String emailIcon = "$basePath/profile/email_icon.svg";
+  static const String locationIcon = "$basePath/profile/location_icon.svg";
+  static const String profileIcon = "$basePath/profile/person_icon.svg";
+  static const String profileEdit = "$basePath/profile/profile_edit.svg";
+  static const String profileTextEdit = "$basePath/profile/profile_text_edit.svg";
+  static const String subscription = "$basePath/profile/subs_cription.svg";
+  static const String setting = "$basePath/profile/settings.svg";
+  static const String logout = "$basePath/profile/logout.svg";
 }

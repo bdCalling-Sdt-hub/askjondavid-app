@@ -6,7 +6,8 @@ class SvgPictureWidget extends StatelessWidget {
   final String imageUrl;
   final double height;
   final double width;
-  const SvgPictureWidget({super.key, required this.imageUrl, this.height=100, this.width=100});
+  final bool? isWhite;
+  const SvgPictureWidget({super.key, required this.imageUrl, this.height=100, this.width=100, this.isWhite});
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +15,7 @@ class SvgPictureWidget extends StatelessWidget {
       imageUrl,
       height: height.h,
       width: width.w,
+      color: isWhite==true? Color(0xFFDBDBDB): null,
     );
   }
 }

@@ -9,6 +9,7 @@ import 'package:luxury_car_service/view/module/customer/booking/view/booking.dar
 import 'package:luxury_car_service/view/module/customer/chat/view/chat_list.dart';
 import 'package:luxury_car_service/view/module/customer/home/controller/home_controller.dart';
 import 'package:luxury_car_service/view/module/customer/home/view/home_screen.dart';
+import 'package:luxury_car_service/view/module/customer/profile/profile_screen.dart';
 import 'package:luxury_car_service/view/widgets/custom_sizedbox/custom_sizedbox.dart';
 
 class LandingScreen extends StatelessWidget {
@@ -39,7 +40,7 @@ class LandingScreen extends StatelessWidget {
               HomeScreen(),
               BookingScreen(),
               ChatList(),
-              Center(child: Text('Screen 4')),
+              ProfileScreen()
             ],
           );
         }),
