@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:luxury_car_service/Utils/AppColors/app_colors.dart';
+import 'package:luxury_car_service/Utils/AppImg/app_img.dart';
 import 'package:luxury_car_service/Utils/Texts/text_style.dart';
+import 'package:luxury_car_service/view/module/customer/home/home_widget/svg_picture.dart';
 import 'package:luxury_car_service/view/widgets/custom_sizedbox/custom_sizedbox.dart';
 
 class CustomMessageAppBar extends StatelessWidget {
@@ -67,7 +69,7 @@ class CustomMessageAppBar extends StatelessWidget {
                       fontSize: 14, fontWeight: FontWeight.w400),
                 ),
                 Spacer(),
-                Icon(Icons.info_outline, size: 24, color: Color(0xffCECBC5),)
+                SvgPictureWidget(imageUrl: AppImages.videoSvgIcon, height: 28, width: 28)
               ],
             ),
           ],

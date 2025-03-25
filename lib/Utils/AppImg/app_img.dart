@@ -34,4 +34,9 @@ class AppImages {
   static const String calendar = "$basePath/booking/calendar.svg";
   static const String clock = "$basePath/booking/clock.svg";
   static const String location = "$basePath/booking/location.svg";
+
+  ///====================== Chat Image =========================
+  static const String fileSvgIcon = "$basePath/chat/file_icon.svg";
+  static const String sentSvgIcon = "$basePath/chat/sent_icon.svg";
+  static const String videoSvgIcon = "$basePath/chat/video_call_icon.svg";
 }
