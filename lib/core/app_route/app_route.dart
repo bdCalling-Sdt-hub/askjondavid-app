@@ -20,6 +20,8 @@ import 'package:luxury_car_service/view/module/customer/home/view/service/privat
 import 'package:luxury_car_service/view/module/customer/home/view/service/private_driver/reliable_transportation.dart';
 import 'package:luxury_car_service/view/module/customer/home/view/service/security_personnel_management/security_personnel_details.dart';
 import 'package:luxury_car_service/view/module/customer/home/view/service/security_personnel_management/security_personnel_management.dart';
+import 'package:luxury_car_service/view/module/customer/payment/view/payment.dart';
+import 'package:luxury_car_service/view/module/customer/payment/view/payment_successful.dart';
 import 'package:luxury_car_service/view/module/customer/profile/edit_profile.dart';
 import 'package:luxury_car_service/view/module/customer/profile/personal_information.dart';
 import 'package:luxury_car_service/view/module/customer/profile/subscription.dart';
@@ -51,6 +53,8 @@ class AppRoute {
   static const String subscription = "/subscripton";
   static const String packages = "/packages";
   static const String notification = "/notification_screen";
+  static const String payment = "/payment";
+  static const String paymentSuccessful = "/payment_successful";
 
 
   static List<GetPage> routes = [
@@ -92,5 +96,8 @@ class AppRoute {
     ///===================== Notification ===================
     GetPage(name: notification, page: () => NotificationScreen(), binding: DependencyInjection()),
 
+    ///===================== Payment ===================
+    GetPage(name: payment, page: () => PaymentScreen(), binding: DependencyInjection()),
+    GetPage(name: paymentSuccessful, page: () => PaymentSuccessful(), binding: DependencyInjection()),
   ];
 }

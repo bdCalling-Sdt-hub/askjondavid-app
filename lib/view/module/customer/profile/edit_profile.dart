@@ -59,6 +59,7 @@ class EditProfile extends StatelessWidget {
                           prefixIcon: Icons.location_on_outlined,
                         ),
                       ),
+                      SizedBox(height: MediaQuery.of(context).size.height * 0.18),
                       Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 16.0, vertical: 24),
