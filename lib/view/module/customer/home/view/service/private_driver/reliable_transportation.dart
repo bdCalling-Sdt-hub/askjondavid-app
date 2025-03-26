@@ -5,6 +5,7 @@ import 'package:luxury_car_service/Utils/AppColors/app_colors.dart';
 import 'package:luxury_car_service/Utils/AppImg/app_img.dart';
 import 'package:luxury_car_service/Utils/StaticString/static_string.dart';
 import 'package:luxury_car_service/Utils/Texts/text_style.dart';
+import 'package:luxury_car_service/core/app_route/app_route.dart';
 import 'package:luxury_car_service/view/module/common/auth/auth_widgets/custom_button.dart';
 import 'package:luxury_car_service/view/module/customer/home/home_widget/svg_picture.dart';
 import 'package:luxury_car_service/view/widgets/custom_sizedbox/custom_sizedbox.dart';
@@ -142,7 +143,9 @@ class ReliableTransportation extends StatelessWidget {
                         SizedBox(height: MediaQuery.of(context).size.height * 0.12),
                         Align(
                           alignment: Alignment.bottomCenter,
-                          child: CustomButton(text: "Register Now", onTap:(){}),
+                          child: CustomButton(text: "Register Now", onTap:(){
+                            Get.toNamed(AppRoute.payment);
+                          }),
                         ),
                       ],
                     ),

@@ -1,11 +1,14 @@
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:intl/intl.dart';
 import 'package:luxury_car_service/Utils/AppColors/app_colors.dart';
 import 'package:luxury_car_service/Utils/AppImg/app_img.dart';
 import 'package:luxury_car_service/Utils/StaticString/static_string.dart';
 import 'package:luxury_car_service/Utils/Texts/text_style.dart';
+import 'package:luxury_car_service/core/app_route/app_route.dart';
 import 'package:luxury_car_service/view/module/common/auth/auth_widgets/custom_button.dart';
 import 'package:luxury_car_service/view/module/customer/home/controller/home_controller.dart';
 import 'package:luxury_car_service/view/module/customer/home/home_widget/svg_picture.dart';
@@ -16,7 +19,6 @@ class SecurityPersonnelDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: SafeArea(
@@ -50,7 +52,8 @@ class SecurityPersonnelDetails extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 0.0),
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 16.0),
                             child: Column(
                               children: [
                                 HeightGap(height: 8),
@@ -150,7 +153,10 @@ class SecurityPersonnelDetails extends StatelessWidget {
                                 SizedBox(height: MediaQuery.of(context).size.height * 0.05),
                                 Align(
                                   alignment: Alignment.bottomCenter,
-                                  child: CustomButton(text: "Register Now", onTap: () {}),
+                                  child: CustomButton(
+                                      text: "Register Now", onTap: () {
+                                        Get.toNamed(AppRoute.payment);
+                                  }),
                                 ),
                               ],
                             ),
@@ -218,13 +224,13 @@ class SecurityPersonnelDetails extends StatelessWidget {
               ? Container(
                   height: 42.h,
                   decoration: BoxDecoration(
-                    color: Color(0xFF18181A),
+                      color: Color(0xFF18181A),
                       border: Border.all(color: Colors.transparent),
-                    borderRadius: BorderRadius.all(Radius.circular(8.0))
-                  ),
+                      borderRadius: BorderRadius.all(Radius.circular(8.0))),
                   child: Center(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 8),
                       child: Text('All'),
                     ),
                   ),
@@ -242,7 +248,7 @@ class SecurityPersonnelDetails extends StatelessWidget {
                     ),
                   ),
                 ),
-          homeController.tabIndex==1
+          homeController.tabIndex == 1
               ? Container(
                   height: 42.h,
                   decoration: BoxDecoration(
@@ -270,7 +276,7 @@ class SecurityPersonnelDetails extends StatelessWidget {
                     ),
                   ),
                 ),
-          homeController.tabIndex==2
+          homeController.tabIndex == 2
               ? Container(
                   height: 42.h,
                   decoration: BoxDecoration(
@@ -298,7 +304,7 @@ class SecurityPersonnelDetails extends StatelessWidget {
                     ),
                   ),
                 ),
-          homeController.tabIndex==3
+          homeController.tabIndex == 3
               ? Container(
                   height: 42.h,
                   decoration: BoxDecoration(
@@ -342,19 +348,144 @@ class SecurityPersonnelDetails extends StatelessWidget {
               child: Text(
                 AppString.securityPersonnelManagement,
                 style: TextStyles.regular16.copyWith(
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xFFABABAB),
-                  overflow: TextOverflow.fade
-                ),
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFFABABAB),
+                    overflow: TextOverflow.fade),
               ),
             ),
           ),
-          const Center(
-            child: Text(
-              'tab 2',
-              style: TextStyle(color: Colors.white),
+          Center(
+              child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                HeightGap(height: 14.h),
+                Text(
+                  'Start Date',
+                  style: TextStyles.regular12.copyWith(
+                      color: AppColors.appGrayColor,
+                      fontWeight: FontWeight.w600),
+                ),
+                HeightGap(height: 8),
+                Obx(() {
+                  final homeController = Get.find<HomeController>();
+                  return Container(
+                    height: 52.h,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: Color(0xFF18181A)),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Column(
+                        children: [
+                          TextField(
+                            controller: TextEditingController(
+                                text: homeController.selectedDate.value),
+                            style: TextStyles.regular16.copyWith(
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.appGrayColor),
+                            decoration: InputDecoration(
+                                hintText: 'mm/dd/yyyy',
+                                hintStyle: TextStyles.regular14.copyWith(
+                                  color: AppColors.appGrayColor,
+                                ),
+                                suffixIcon: IconButton(
+                                  icon: Icon(
+                                    EvaIcons.calendarOutline,
+                                    color: AppColors.appGrayColor,
+                                  ),
+                                  onPressed: () async {
+                                    DateTime? selectedDate =
+                                        await showDatePicker(
+                                      context: context,
+                                      initialDate: DateTime.now(),
+                                      firstDate: DateTime(1900),
+                                      lastDate: DateTime(2101),
+                                    );
+
+                                    if (selectedDate != null) {
+                                      String formattedDate =
+                                          DateFormat('MM/dd/yyyy')
+                                              .format(selectedDate);
+                                      homeController.selectedDate.value =
+                                          formattedDate;
+                                    }
+                                  },
+                                ),
+                                contentPadding:
+                                    EdgeInsets.symmetric(vertical: 14),
+                                border: InputBorder.none),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                }),
+                HeightGap(height: 8),
+                Text(
+                  'End Date',
+                  style: TextStyles.regular12.copyWith(
+                      color: AppColors.appGrayColor,
+                      fontWeight: FontWeight.w600),
+                ),
+                HeightGap(height: 8),
+                Obx(() {
+                  final homeController = Get.find<HomeController>();
+                  return Container(
+                    height: 52.h,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: Color(0xFF18181A)),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Column(
+                        children: [
+                          TextField(
+                            controller: TextEditingController(
+                                text: homeController.selectedDate.value),
+                            style: TextStyles.regular16.copyWith(
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.appGrayColor),
+                            decoration: InputDecoration(
+                                hintText: 'mm/dd/yyyy',
+                                hintStyle: TextStyles.regular14.copyWith(
+                                  color: AppColors.appGrayColor,
+                                ),
+                                suffixIcon: IconButton(
+                                  icon: Icon(
+                                    EvaIcons.calendarOutline,
+                                    color: AppColors.appGrayColor,
+                                  ),
+                                  onPressed: () async {
+                                    DateTime? selectedDate =
+                                        await showDatePicker(
+                                      context: context,
+                                      initialDate: DateTime.now(),
+                                      firstDate: DateTime(1900),
+                                      lastDate: DateTime(2101),
+                                    );
+
+                                    if (selectedDate != null) {
+                                      String formattedDate =
+                                          DateFormat('MM/dd/yyyy')
+                                              .format(selectedDate);
+                                      homeController.selectedDate.value =
+                                          formattedDate;
+                                    }
+                                  },
+                                ),
+                                contentPadding:
+                                    EdgeInsets.symmetric(vertical: 14),
+                                border: InputBorder.none),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                }),
+              ],
             ),
-          ),
+          )),
           Center(
             child: Padding(
               padding: const EdgeInsets.only(top: 10.0),
@@ -381,12 +512,26 @@ class SecurityPersonnelDetails extends StatelessWidget {
               ),
             ),
           ),
-          const Center(
-            child: Text(
-              'tab 4',
-              style: TextStyle(color: Colors.white),
+          Center(
+              child: Align(
+            alignment: Alignment.centerRight,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: (){
+                    Get.toNamed(AppRoute.messageScreen);
+                  },
+                  child: SvgPictureWidget(
+                    imageUrl: AppImages.messageIcon,
+                    height: 52.h,
+                    width: 32.w,
+                  ),
+                )
+              ],
             ),
-          ),
+          )),
         ],
       ),
     );

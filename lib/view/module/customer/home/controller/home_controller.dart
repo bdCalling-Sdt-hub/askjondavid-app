@@ -78,6 +78,9 @@ class HomeController extends GetxController{
     );
   }
 
+  // Calendar
+  var selectedDate = "".obs;
+
   @override
   void onInit() {
     // TODO: implement onInit
