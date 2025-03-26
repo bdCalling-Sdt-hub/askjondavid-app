@@ -8,6 +8,11 @@ import 'package:luxury_car_service/view/module/common/auth/view/sign_in_screen.d
 import 'package:luxury_car_service/view/module/common/chat_screen.dart';
 import 'package:luxury_car_service/view/module/common/notification/view/notification.dart';
 import 'package:luxury_car_service/view/module/common/onboarding/view/onboarding_screen.dart';
+import 'package:luxury_car_service/view/module/common/setting/view/about_us.dart';
+import 'package:luxury_car_service/view/module/common/setting/view/change_password.dart';
+import 'package:luxury_car_service/view/module/common/setting/view/privacy_policy.dart';
+import 'package:luxury_car_service/view/module/common/setting/view/setting_screen.dart';
+import 'package:luxury_car_service/view/module/common/setting/view/terms_conditions.dart';
 import 'package:luxury_car_service/view/module/common/splash/screen_one.dart';
 import 'package:luxury_car_service/view/module/common/splash/screen_two.dart';
 import 'package:luxury_car_service/view/module/customer/booking/view/order_details.dart';
@@ -55,6 +60,11 @@ class AppRoute {
   static const String notification = "/notification_screen";
   static const String payment = "/payment";
   static const String paymentSuccessful = "/payment_successful";
+  static const String settingScreen = "/setting_screen";
+  static const String changePassword = "/change_password";
+  static const String aboutUs = "/about_us";
+  static const String termsAndCondition = "/terms_condition";
+  static const String privacyPolicy = "/privacy_policy";
 
 
   static List<GetPage> routes = [
@@ -99,5 +109,12 @@ class AppRoute {
     ///===================== Payment ===================
     GetPage(name: payment, page: () => PaymentScreen(), binding: DependencyInjection()),
     GetPage(name: paymentSuccessful, page: () => PaymentSuccessful(), binding: DependencyInjection()),
+
+    ///===================== Setting ===================
+    GetPage(name: settingScreen, page: () => SettingScreen(), binding: DependencyInjection()),
+    GetPage(name: changePassword, page: () => ChangePassword(), binding: DependencyInjection()),
+    GetPage(name: aboutUs, page: () => AboutUs(), binding: DependencyInjection()),
+    GetPage(name: termsAndCondition, page: () => TermsConditions(), binding: DependencyInjection()),
+    GetPage(name: privacyPolicy, page: () => PrivacyPolicy(), binding: DependencyInjection()),
   ];
 }

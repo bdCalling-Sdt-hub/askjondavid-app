@@ -88,14 +88,12 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return "Email can't be empty";
-                          } else if (!GetUtils.isEmail(value)) {
-                            return 'Invalid email format';
                           }
                           return null;
                         },
                       ),
                       HeightGap(height: 20),
-                      // Name Field
+                      // Email Field
                       CustomTextFromField(
                         hintText: 'Enter your email',
                         prefixIcon: EvaIcons.emailOutline,
@@ -110,7 +108,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                         },
                       ),
                       HeightGap(height: 20),
-                      // Name Field
+                      // Location Field
                       CustomTextFromField(
                         hintText: 'Enter your location',
                         prefixIcon: Icons.location_on_outlined,
@@ -118,8 +116,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return "Email can't be empty";
-                          } else if (!GetUtils.isEmail(value)) {
-                            return 'Invalid email format';
                           }
                           return null;
                         },

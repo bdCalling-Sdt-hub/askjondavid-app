@@ -45,6 +45,15 @@ class AuthController extends GetxController{
     update();
   }
 
+  // Old password
+  RxBool oldPasswordObscureText = true.obs;
+  bool get oldPasswordObscureTextVisible => oldPasswordObscureText.value;
+  set doOldPasswordObscureTextVisible(bool value) {
+    oldPasswordObscureText.value = value;
+    update();
+  }
+
+
   /// Timer
   Timer? _timer;
   int remainingSeconds = 1;

@@ -44,7 +44,9 @@ class ProfileScreen extends StatelessWidget {
                 Get.toNamed(AppRoute.subscription);
               }),
               HeightGap(height: 28.h),
-              _profileCart(AppImages.setting, "Settings", () {}),
+              _profileCart(AppImages.setting, "Settings", () {
+                Get.toNamed(AppRoute.settingScreen);
+              }),
               HeightGap(height: 100.h),
               _logOut()
             ],

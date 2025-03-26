@@ -56,4 +56,11 @@ class AppImages {
   static const String logout = "$basePath/profile/logout.svg";
   static const String inclusion = "$basePath/profile/inclusion.svg";
   static const String benifit = "$basePath/profile/benifit.svg";
+
+  ///====================== Setting Image =========================
+  static const String aboutSvgIcon = "$basePath/setting/about_us.svg";
+  static const String changePasswordSvgIcon = "$basePath/setting/change_password.svg";
+  static const String deleteSvgIcon = "$basePath/setting/delete_acc.svg";
+  static const String privacyPolicySvgIcon = "$basePath/setting/privacy_policy.svg";
+  static const String termAndConditionSvgIcon = "$basePath/setting/tearm_condition.svg";
 }
