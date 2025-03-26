@@ -33,6 +33,7 @@ class AppImages {
   static const String paymentSuccessful = "$basePath/home/payment_successfull.svg";
   static const String messageIcon = "$basePath/home/message_button.svg";
   static const String serviceSbg = "$basePath/home/service.svg";
+  static const String bankAccSvg = "$basePath/home/manage_bank_acc.svg";
 
   ///====================== Booking Image =========================
   static const String car = "$basePath/booking/car.svg";

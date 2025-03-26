@@ -8,8 +8,8 @@ import 'package:luxury_car_service/Utils/Texts/text_style.dart';
 import 'package:luxury_car_service/view/module/customer/booking/view/booking.dart';
 import 'package:luxury_car_service/view/module/customer/chat/view/chat_list.dart';
 import 'package:luxury_car_service/view/module/customer/home/controller/home_controller.dart';
-import 'package:luxury_car_service/view/module/customer/profile/profile_screen.dart';
 import 'package:luxury_car_service/view/module/driver/driver_booking/view/driver_booking.dart';
+import 'package:luxury_car_service/view/module/driver/driver_home/driver_profile.dart';
 import 'package:luxury_car_service/view/widgets/custom_sizedbox/custom_sizedbox.dart';
 class DriverLandingScreen extends StatelessWidget {
   DriverLandingScreen({super.key});
@@ -39,7 +39,7 @@ class DriverLandingScreen extends StatelessWidget {
                 DriverBookingScreen(),
                 BookingScreen(),
                 ChatList(),
-                ProfileScreen()
+                DriverProfileScreen()
               ],
             );
           }),
