@@ -6,6 +6,7 @@ import 'package:luxury_car_service/view/module/common/auth/view/create_password.
 import 'package:luxury_car_service/view/module/common/auth/view/forgot_password.dart';
 import 'package:luxury_car_service/view/module/common/auth/view/sign_in_screen.dart';
 import 'package:luxury_car_service/view/module/common/chat_screen.dart';
+import 'package:luxury_car_service/view/module/common/notification/view/notification.dart';
 import 'package:luxury_car_service/view/module/common/onboarding/view/onboarding_screen.dart';
 import 'package:luxury_car_service/view/module/common/splash/screen_one.dart';
 import 'package:luxury_car_service/view/module/common/splash/screen_two.dart';
@@ -49,6 +50,7 @@ class AppRoute {
   static const String editProfile = "/edit_profile";
   static const String subscription = "/subscripton";
   static const String packages = "/packages";
+  static const String notification = "/notification_screen";
 
 
   static List<GetPage> routes = [
@@ -86,6 +88,9 @@ class AppRoute {
     GetPage(name: editProfile, page: () => EditProfile(), binding: DependencyInjection()),
     GetPage(name: subscription, page: () => Subscription(), binding: DependencyInjection()),
     GetPage(name: packages, page: () => PackagesScreen(), binding: DependencyInjection()),
+
+    ///===================== Notification ===================
+    GetPage(name: notification, page: () => NotificationScreen(), binding: DependencyInjection()),
 
   ];
 }

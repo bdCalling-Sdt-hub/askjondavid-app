@@ -28,6 +28,7 @@ class AppImages {
   static const String privateDriver = "$basePath/home/private_driver.png";
   static const String securityPerson = "$basePath/home/security_person.png";
   static const String bookingAssistant = "$basePath/home/booking_assistant.svg";
+  static const String notification = "$basePath/home/notification.svg";
 
   ///====================== Booking Image =========================
   static const String car = "$basePath/booking/car.svg";

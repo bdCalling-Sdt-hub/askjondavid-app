@@ -7,6 +7,7 @@ import 'package:luxury_car_service/Utils/Texts/text_style.dart';
 import 'package:luxury_car_service/core/app_route/app_route.dart';
 import 'package:luxury_car_service/view/module/customer/home/home_widget/svg_picture.dart';
 import 'package:luxury_car_service/view/widgets/custom_sizedbox/custom_sizedbox.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -23,17 +24,29 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SvgPictureWidget(imageUrl: AppImages.appBarLogoSvg, height: 20, width: 20,),
-                  SvgPictureWidget(imageUrl: AppImages.notificationSvg, height: 20, width: 20,)
+                  SvgPictureWidget(
+                    imageUrl: AppImages.appBarLogoSvg,
+                    height: 20,
+                    width: 20,
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      Get.toNamed(AppRoute.notification);
+                    },
+                    child: SvgPictureWidget(
+                      imageUrl: AppImages.notificationSvg,
+                      height: 20,
+                      width: 20,
+                    ),
+                  )
                 ],
               ),
               HeightGap(height: 28.h),
               Text(
                 'Explore our service',
                 style: TextStyles.regular24.copyWith(
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.textGreyColor
-                ),
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.textGreyColor),
               ),
               HeightGap(height: 16),
               Expanded(
@@ -41,17 +54,26 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ServiceCartWidget(image: AppImages.bespoke, text: "Bespoke concierge services", onTap: (){
-                        Get.toNamed(AppRoute.bespokeScreen);
-                      }),
+                      ServiceCartWidget(
+                          image: AppImages.bespoke,
+                          text: "Bespoke concierge services",
+                          onTap: () {
+                            Get.toNamed(AppRoute.bespokeScreen);
+                          }),
                       HeightGap(height: 16),
-                      ServiceCartWidget(image: AppImages.privateDriver, text: "Private drivers",onTap: (){
-                        Get.toNamed(AppRoute.privateDriver);
-                      }),
+                      ServiceCartWidget(
+                          image: AppImages.privateDriver,
+                          text: "Private drivers",
+                          onTap: () {
+                            Get.toNamed(AppRoute.privateDriver);
+                          }),
                       HeightGap(height: 16),
-                      ServiceCartWidget(image: AppImages.securityPerson, text: "Security personnel management",onTap: (){
-                        Get.toNamed(AppRoute.securityPersonnelManagement);
-                      }),
+                      ServiceCartWidget(
+                          image: AppImages.securityPerson,
+                          text: "Security personnel management",
+                          onTap: () {
+                            Get.toNamed(AppRoute.securityPersonnelManagement);
+                          }),
                     ],
                   ),
                 ),
@@ -68,6 +90,7 @@ class ServiceCartWidget extends StatelessWidget {
   final String image;
   final String text;
   final VoidCallback onTap;
+
   const ServiceCartWidget({
     super.key,
     required this.image,
