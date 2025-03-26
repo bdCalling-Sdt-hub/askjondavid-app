@@ -92,7 +92,11 @@ class AuthController extends GetxController{
     });
   }
 
-
+  // check type
+  var type="".obs;
+  void checkType(String newType){
+    type.value=newType;
+  }
   // Check box
   // Separate observables for each checkbox
   var isUserChecked = false.obs;

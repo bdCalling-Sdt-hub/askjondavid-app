@@ -30,6 +30,8 @@ import 'package:luxury_car_service/view/module/customer/payment/view/payment_suc
 import 'package:luxury_car_service/view/module/customer/profile/edit_profile.dart';
 import 'package:luxury_car_service/view/module/customer/profile/personal_information.dart';
 import 'package:luxury_car_service/view/module/customer/profile/subscription.dart';
+import 'package:luxury_car_service/view/module/driver/driver_booking/view/driver_reservation_details.dart';
+import 'package:luxury_car_service/view/module/driver/driver_home/driver_landign_screen.dart';
 
 
 class AppRoute {
@@ -65,6 +67,8 @@ class AppRoute {
   static const String aboutUs = "/about_us";
   static const String termsAndCondition = "/terms_condition";
   static const String privacyPolicy = "/privacy_policy";
+  static const String driverLanding = "/driver_landing";
+  static const String reservationDetails = "/reservation_details";
 
 
   static List<GetPage> routes = [
@@ -116,5 +120,9 @@ class AppRoute {
     GetPage(name: aboutUs, page: () => AboutUs(), binding: DependencyInjection()),
     GetPage(name: termsAndCondition, page: () => TermsConditions(), binding: DependencyInjection()),
     GetPage(name: privacyPolicy, page: () => PrivacyPolicy(), binding: DependencyInjection()),
+
+    ///===================== Driver Part ===================
+    GetPage(name: driverLanding, page: () => DriverLandingScreen(), binding: DependencyInjection()),
+    GetPage(name: reservationDetails, page: () => ReservationDetails(), binding: DependencyInjection()),
   ];
 }

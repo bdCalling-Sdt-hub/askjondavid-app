@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:luxury_car_service/Utils/AppColors/app_colors.dart';
 import 'package:luxury_car_service/Utils/AppImg/app_img.dart';
 import 'package:luxury_car_service/Utils/Texts/text_style.dart';
+import 'package:luxury_car_service/core/app_route/app_route.dart';
 import 'package:luxury_car_service/view/module/common/auth/auth_widgets/app_logo_widget.dart';
 import 'package:luxury_car_service/view/module/common/auth/auth_widgets/custom_button.dart';
 import 'package:luxury_car_service/view/module/common/auth/controller/auth_controller.dart';
@@ -248,8 +249,13 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
       child: Column(
         children: [
           CustomButton(text: 'Next', onTap: (){
+            final authController = Get.find<AuthController>();
             if(signInFormKey.currentState!.validate()){
-
+              if(authController.type.value=="Driver"){
+                Get.toNamed(AppRoute.driverLanding);
+              }else{
+                Get.toNamed(AppRoute.landingScreen);
+              }
             }
           },),
           HeightGap(height: 20),
@@ -286,6 +292,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
         GestureDetector(
           onTap: () {
             toggleFunction();
+            authController.checkType(text);
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30.0),

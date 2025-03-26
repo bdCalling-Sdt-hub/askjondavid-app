@@ -5,19 +5,19 @@ import 'package:luxury_car_service/core/app_route/app_route.dart';
 import 'package:luxury_car_service/view/module/customer/booking/booking_widgets/booking_cart_widget.dart';
 import 'package:luxury_car_service/view/widgets/custom_sizedbox/custom_sizedbox.dart';
 
-class Completed extends StatelessWidget {
-  const Completed({super.key});
+class DriverBookingReject extends StatelessWidget {
+  const DriverBookingReject({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.appBg,
       body: ListView.separated(
-        itemCount: 4,
+        itemCount: 10,
         itemBuilder: (context, index){
           return GestureDetector(
             onTap: (){
-              Get.toNamed(AppRoute.orderDetails);
+              Get.toNamed(AppRoute.reservationDetails);
             },
             child: BookingCartWidget(
               imgUrl: "https://www.shutterstock.com/image-photo/smiling-african-american-millennial-businessman-600nw-1437938108.jpg",
