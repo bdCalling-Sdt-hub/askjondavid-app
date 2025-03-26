@@ -29,18 +29,24 @@ class PersonalInformation extends StatelessWidget {
               CustomAppBar(onTap: (){
                 Get.back();
               }, title: "Personal Information"),
-              HeightGap(height: 23),
-              // profile image
-              profileImage(),
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    HeightGap(height: 23),
+                    // profile image
+                    profileImage(),
 
-              // profile edit
-              _editProfile(),
-              HeightGap(height: 12),
-              _profileInfoCart(AppImages.profileIcon, "Ethan Michael"),
-              HeightGap(height: 20.h),
-              _profileInfoCart(AppImages.emailIcon, "ethan@gmail.com"),
-              HeightGap(height: 20.h),
-              _profileInfoCart(AppImages.location, "2972 Westheimer Rd. Santa Ana,85486"),
+                    // profile edit
+                    _editProfile(),
+                    HeightGap(height: 12),
+                    _profileInfoCart(AppImages.profileIcon, "Ethan Michael"),
+                    HeightGap(height: 20.h),
+                    _profileInfoCart(AppImages.emailIcon, "ethan@gmail.com"),
+                    HeightGap(height: 20.h),
+                    _profileInfoCart(AppImages.location, "2972 Westheimer Rd. Santa Ana,85486"),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

@@ -164,7 +164,7 @@ class _SignInScreenState extends State<SignInScreen> {
             CustomButton(text: 'Sign In', onTap: (){
               if(signInFormKey.currentState!.validate()){
                 // Get.offAllNamed(AppRoute.landingScreen);
-                Get.to(()=>PackagesScreen());
+                Get.toNamed(AppRoute.packages);
               }
             },),
             HeightGap(height: 20),
