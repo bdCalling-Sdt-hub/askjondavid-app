@@ -154,39 +154,49 @@ class ProfileScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     GestureDetector(
-                      child: Container(
-                        height: 48.h,
-                        width: 110.w,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.r),
-                          color: Color(0xFF0C0B0E),
-                        ),
-                        child: Center(
-                          child: Text('Cancel', style: TextStyles.regular20.copyWith(
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xFFABABAB)
-                          ),),
+                      child: GestureDetector(
+                        onTap: (){
+                          Get.back();
+                        },
+                        child: Container(
+                          height: 48.h,
+                          width: 110.w,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.r),
+                            color: Color(0xFF0C0B0E),
+                          ),
+                          child: Center(
+                            child: Text('Cancel', style: TextStyles.regular20.copyWith(
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xFFABABAB)
+                            ),),
+                          ),
                         ),
                       ),
                       onTap: (){
                         Get.back();
                       }
                     ),
-                    Container(
-                      height: 48.h,
-                      width: 110.w,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.r),
-                        image: DecorationImage(
-                          image: AssetImage(AppImages.buttonBg),
-                          fit: BoxFit.cover
-                        )
-                      ),
-                      child: Center(
-                        child: Text('Log Out', style: TextStyles.regular20.copyWith(
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xFF101010)
-                        ),),
+                    GestureDetector(
+                      onTap: (){
+                        Get.offAllNamed(AppRoute.onboardingScreen);
+                      },
+                      child: Container(
+                        height: 48.h,
+                        width: 110.w,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.r),
+                          image: DecorationImage(
+                            image: AssetImage(AppImages.buttonBg),
+                            fit: BoxFit.cover
+                          )
+                        ),
+                        child: Center(
+                          child: Text('Log Out', style: TextStyles.regular20.copyWith(
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xFF101010)
+                          ),),
+                        ),
                       ),
                     ),
                   ],

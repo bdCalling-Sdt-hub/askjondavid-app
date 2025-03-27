@@ -127,6 +127,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       HeightGap(height: 20),
                       _confirmPasswordField(),
                       HeightGap(height: 16),
+                      // check box
                       Center(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -178,7 +179,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               ),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
-                  // Handle Terms & Conditions tap (navigate to a page)
+                  Get.toNamed(AppRoute.termsAndCondition);
                 },
             ),
             TextSpan(
@@ -194,7 +195,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               ),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
-                  // Handle Privacy Policy tap (navigate to a page)
+                    Get.toNamed(AppRoute.privacyPolicy);
                 },
             ),
             TextSpan(
@@ -250,12 +251,17 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
         children: [
           CustomButton(text: 'Next', onTap: (){
             final authController = Get.find<AuthController>();
-            if(signInFormKey.currentState!.validate()){
-              if(authController.type.value=="Driver"){
-                Get.toNamed(AppRoute.driverLanding);
-              }else{
-                Get.toNamed(AppRoute.landingScreen);
+            if(authController.isChecked.value){
+              if(signInFormKey.currentState!.validate()){
+
+                if(authController.type.value=="Driver"){
+                  Get.toNamed(AppRoute.documentUpload);
+                }else{
+                  Get.toNamed(AppRoute.landingScreen);
+                }
               }
+            }else{
+              Get.snackbar("Warning", "Please accept out terms & conditions", colorText: AppColors.appGrayColor, backgroundColor: Colors.amber.withOpacity(0.3));
             }
           },),
           HeightGap(height: 20),

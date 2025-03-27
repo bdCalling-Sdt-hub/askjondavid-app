@@ -30,6 +30,11 @@ import 'package:luxury_car_service/view/module/customer/payment/view/payment_suc
 import 'package:luxury_car_service/view/module/customer/profile/edit_profile.dart';
 import 'package:luxury_car_service/view/module/customer/profile/personal_information.dart';
 import 'package:luxury_car_service/view/module/customer/profile/subscription.dart';
+import 'package:luxury_car_service/view/module/driver/document_upload/view/document_upload.dart';
+import 'package:luxury_car_service/view/module/driver/document_upload/view/upload_driving_licence.dart';
+import 'package:luxury_car_service/view/module/driver/document_upload/view/upload_id_card.dart';
+import 'package:luxury_car_service/view/module/driver/document_upload/view/vehicle_fitness.dart';
+import 'package:luxury_car_service/view/module/driver/document_upload/view/vehicle_registration.dart';
 import 'package:luxury_car_service/view/module/driver/driver_booking/view/driver_reservation_details.dart';
 import 'package:luxury_car_service/view/module/driver/driver_home/driver_landign_screen.dart';
 import 'package:luxury_car_service/view/module/driver/service/view/add_service.dart';
@@ -71,6 +76,11 @@ class AppRoute {
   static const String driverLanding = "/driver_landing";
   static const String reservationDetails = "/reservation_details";
   static const String addService = "/add_service";
+  static const String documentUpload = "/document_upload";
+  static const String uploadIdCard = "/upload_id_card";
+  static const String uploadDrivingLicence = "/upload_driving_licence";
+  static const String vehicleRegistration = "/upload_vehicle_registration";
+  static const String vehicleFitness = "/vehicle_fitness";
 
 
   static List<GetPage> routes = [
@@ -127,5 +137,10 @@ class AppRoute {
     GetPage(name: driverLanding, page: () => DriverLandingScreen(), binding: DependencyInjection()),
     GetPage(name: reservationDetails, page: () => ReservationDetails(), binding: DependencyInjection()),
     GetPage(name: addService, page: () => AddServiceScreen(), binding: DependencyInjection()),
+    GetPage(name: documentUpload, page: () => DocumentUpload(), binding: DependencyInjection()),
+    GetPage(name: uploadIdCard, page: () => UploadIdCard(), binding: DependencyInjection()),
+    GetPage(name: uploadDrivingLicence, page: () => UploadDrivingLicence(), binding: DependencyInjection()),
+    GetPage(name: vehicleRegistration, page: () => VehicleRegistration(), binding: DependencyInjection()),
+    GetPage(name: vehicleFitness, page: () => VehicleFitness(), binding: DependencyInjection()),
   ];
 }

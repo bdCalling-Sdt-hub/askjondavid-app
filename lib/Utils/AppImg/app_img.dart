@@ -35,6 +35,9 @@ class AppImages {
   static const String serviceSbg = "$basePath/home/service.svg";
   static const String bankAccSvg = "$basePath/home/manage_bank_acc.svg";
   static const String imageSvg = "$basePath/home/imageSvg.svg";
+  static const String captureFront = "$basePath/home/capture_front_size.svg";
+  static const String captureBack = "$basePath/home/capture_back_side.svg";
+  static const String clicked = "$basePath/home/clickedSvgIcon.svg";
 
   ///====================== Booking Image =========================
   static const String car = "$basePath/booking/car.svg";

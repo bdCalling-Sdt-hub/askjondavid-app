@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:luxury_car_service/Utils/AppColors/app_colors.dart';
 import 'package:luxury_car_service/Utils/AppImg/app_img.dart';
 import 'package:luxury_car_service/Utils/Texts/text_style.dart';
+import 'package:luxury_car_service/core/app_route/app_route.dart';
 import 'package:luxury_car_service/view/module/common/auth/auth_widgets/custom_button.dart';
 import 'package:luxury_car_service/view/module/customer/home/home_widget/svg_picture.dart';
 import 'package:luxury_car_service/view/module/driver/service/controller/service_controller.dart';
@@ -56,7 +57,7 @@ class AddServiceScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
                 child: CustomButton(text: 'Upload', onTap: (){
-
+                  Get.toNamed(AppRoute.documentUpload);
                 }),
               )
             ],
@@ -154,4 +155,3 @@ class AddServiceScreen extends StatelessWidget {
     );
   }
 }
-

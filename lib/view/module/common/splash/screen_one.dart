@@ -15,8 +15,11 @@ class _SplashScreenOneState extends State<SplashScreenOne> {
 
   Future<void> goToNextSplashScreen() async{
     await Future.delayed(const Duration(seconds: 2));
+    // if(mounted){
+    //   Get.toNamed(AppRoute.splashScreenTwo);
+    // }
     if(mounted){
-      Get.toNamed(AppRoute.splashScreenTwo);
+      Get.offAllNamed(AppRoute.onboardingScreen);
     }
   }
   @override

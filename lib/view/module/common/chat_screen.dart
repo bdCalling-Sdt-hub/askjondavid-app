@@ -36,86 +36,89 @@ class MessageScreen extends StatelessWidget {
                   final message = chatController.messages[index];
                   return Align(
                     alignment: message.isSent ? Alignment.centerRight : Alignment.centerLeft,
-                    child: Container(
-                      margin: EdgeInsets.symmetric(vertical: 5),
-                      padding: EdgeInsets.all(10),
-                      constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.7),
-                      decoration: BoxDecoration(
-                        color: message.isSent ? Colors.grey[800] : Colors.grey[900],
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // For received messages, show profile and name at the top
-                          if (!message.isSent)
-                            Row(
-                              children: [
-                                CircleAvatar(
-                                  radius: 6,
-                                  backgroundImage: NetworkImage("https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"), // Assuming you have the sender's profile image
-                                ),
-                                SizedBox(width: 8),
-                                Text(
-                                  "Asad Khan", // Assuming you have the sender's name
-                                  style: TextStyles.regular12.copyWith(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Container(
+                        margin: EdgeInsets.symmetric(vertical: 5),
+                        padding: EdgeInsets.all(10),
+                        constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.7),
+                        decoration: BoxDecoration(
+                          color: message.isSent ? Colors.grey[800] : Colors.grey[900],
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // For received messages, show profile and name at the top
+                            if (!message.isSent)
+                              Row(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 6,
+                                    backgroundImage: NetworkImage("https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"), // Assuming you have the sender's profile image
+                                  ),
+                                  SizedBox(width: 8),
+                                  Text(
+                                    "Asad Khan", // Assuming you have the sender's name
+                                    style: TextStyles.regular12.copyWith(
+                                      fontWeight: FontWeight.w400,
+                                      color: AppColors.appGrayColor
+                                    ),
+                                  ),
+                                ],
+                              ),
+
+                            if (message.imageUrl != null)
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.network(message.imageUrl!),
+                              ),
+                            if (message.text.isNotEmpty)
+                              Padding(
+                                padding: const EdgeInsets.only(top: 8.0),
+                                child: Text(
+                                  message.text,
+                                  style: TextStyles.regular14.copyWith(
                                     fontWeight: FontWeight.w400,
                                     color: AppColors.appGrayColor
-                                  ),
-                                ),
-                              ],
-                            ),
-
-                          if (message.imageUrl != null)
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.network(message.imageUrl!),
-                            ),
-                          if (message.text.isNotEmpty)
-                            Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: Text(
-                                message.text,
-                                style: TextStyles.regular14.copyWith(
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.appGrayColor
-                                )
-                              ),
-                            ),
-                          SizedBox(height: 4),
-                          // Time and icon
-                          Row(
-                            mainAxisAlignment: message.isSent ? MainAxisAlignment.end : MainAxisAlignment.start,
-                            children: [
-                              if (message.isSent) // For sent messages (show the time and double check icon)
-                                Row(
-                                  children: [
-                                    Text(
-                                      "10:11", // Display message time
-                                      style: TextStyles.regular12.copyWith(
-                                        fontWeight: FontWeight.w500,
-                                        color: AppColors.appGrayColor
-                                      )
-                                    ),
-                                    SizedBox(width: 5),
-                                    Icon(
-                                      Icons.check_circle, // Double check icon
-                                      color: Colors.white,
-                                      size: 16,
-                                    ),
-                                  ],
-                                ),
-                              if (!message.isSent) // For received messages (show time)
-                                Text(
-                                  "10:11", // Display message time
-                                  style: TextStyles.regular12.copyWith(
-                                    fontWeight: FontWeight.w500,
-                                      color: Color(0xFFF66E10)
                                   )
                                 ),
-                            ],
-                          ),
-                        ],
+                              ),
+                            SizedBox(height: 4),
+                            // Time and icon
+                            Row(
+                              mainAxisAlignment: message.isSent ? MainAxisAlignment.end : MainAxisAlignment.start,
+                              children: [
+                                if (message.isSent) // For sent messages (show the time and double check icon)
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "10:11", // Display message time
+                                        style: TextStyles.regular12.copyWith(
+                                          fontWeight: FontWeight.w500,
+                                          color: AppColors.appGrayColor
+                                        )
+                                      ),
+                                      SizedBox(width: 5),
+                                      Icon(
+                                        Icons.check_circle, // Double check icon
+                                        color: Colors.white,
+                                        size: 16,
+                                      ),
+                                    ],
+                                  ),
+                                if (!message.isSent) // For received messages (show time)
+                                  Text(
+                                    "10:11", // Display message time
+                                    style: TextStyles.regular12.copyWith(
+                                      fontWeight: FontWeight.w500,
+                                        color: Color(0xFFF66E10)
+                                    )
+                                  ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   );

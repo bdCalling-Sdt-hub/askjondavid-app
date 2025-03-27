@@ -30,116 +30,119 @@ class BookingCartWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: Color(0xFF18181A),
-        borderRadius: BorderRadius.circular(8)
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 6.0, vertical: 12),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                CircleAvatar(
-                  radius: 44.r,
-                  backgroundImage: NetworkImage(imgUrl),
-                ),
-                WidthGap(width: 8),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(name, style: TextStyles.regular16.copyWith(
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFFABABAB)
-                    )),
-                    HeightGap(height: 5),
-                    Text('Order id: #${orderId}', style: TextStyles.regular16.copyWith(
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xFF929292)
-                    ),),
-                    HeightGap(height: 5),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Price: ',style: TextStyles.regular16.copyWith(
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xFF757575)
-                        ),),
-                        Text('\$ $rent', style: TextStyles.regular16.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.appGrayColor
-                        ),),
-                      ],
-                    ),
-                  ],
-                )
-              ],
-            ),
-            HeightGap(height: 20),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Color(0xFF18181A),
+          borderRadius: BorderRadius.circular(8)
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 12),
+          child: Column(
+            children: [
+              Row(
                 children: [
-                  // Car Icon and Text
-                  SvgPictureWidget(imageUrl: AppImages.car, height: 12, width: 12),
-                  WidthGap(width: 4),
-                  Text(
-                    carName,
-                    style: TextStyles.regular12.copyWith(
-                        color: AppColors.appGrayColor,
-                        fontWeight: FontWeight.w400
-                    ),
+                  CircleAvatar(
+                    radius: 44.r,
+                    backgroundImage: NetworkImage(imgUrl),
                   ),
-                  WidthGap(width: 6),
-                  CustomVerticalDivider(),
-                  WidthGap(width: 6),
-
-                  // Calender
-                  SvgPictureWidget(imageUrl: AppImages.calendar, height: 12, width: 12),
-                  WidthGap(width: 4),
-                  Text(
-                    date,
-                    style: TextStyles.regular12.copyWith(
-                        color: AppColors.appGrayColor,
-                        fontWeight: FontWeight.w400
-                    ),
-                  ),
-                  WidthGap(width: 6),
-                  CustomVerticalDivider(),
-                  WidthGap(width: 6),
-
-                  // Clock
-                  SvgPictureWidget(imageUrl: AppImages.clock, height: 12, width: 12),
-                  WidthGap(width: 4),
-                  Text(
-                    time,
-                    style: TextStyles.regular12.copyWith(
-                        color: AppColors.appGrayColor,
-                        fontWeight: FontWeight.w400
-                    ),
-                  ),
-                  WidthGap(width: 6),
-                  CustomVerticalDivider(),
-                  WidthGap(width: 6),
-
-                  // location
-                  SvgPictureWidget(imageUrl: AppImages.location, height: 12, width: 12),
-                  WidthGap(width: 4),
-                  Text(
-                    location,
-                    style: TextStyles.regular12.copyWith(
-                        color: AppColors.appGrayColor,
-                        fontWeight: FontWeight.w400
-                    ),
-                  ),
-                  WidthGap(width: 6),
+                  WidthGap(width: 8),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(name, style: TextStyles.regular16.copyWith(
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFFABABAB)
+                      )),
+                      HeightGap(height: 5),
+                      Text('Order id: #${orderId}', style: TextStyles.regular16.copyWith(
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF929292)
+                      ),),
+                      HeightGap(height: 5),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Price: ',style: TextStyles.regular16.copyWith(
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xFF757575)
+                          ),),
+                          Text('\$ $rent', style: TextStyles.regular16.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.appGrayColor
+                          ),),
+                        ],
+                      ),
+                    ],
+                  )
                 ],
               ),
-            ),
-          ],
+              HeightGap(height: 20),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Car Icon and Text
+                    SvgPictureWidget(imageUrl: AppImages.car, height: 12, width: 12),
+                    WidthGap(width: 4),
+                    Text(
+                      carName,
+                      style: TextStyles.regular12.copyWith(
+                          color: AppColors.appGrayColor,
+                          fontWeight: FontWeight.w400
+                      ),
+                    ),
+                    WidthGap(width: 6),
+                    CustomVerticalDivider(),
+                    WidthGap(width: 6),
+
+                    // Calender
+                    SvgPictureWidget(imageUrl: AppImages.calendar, height: 12, width: 12),
+                    WidthGap(width: 4),
+                    Text(
+                      date,
+                      style: TextStyles.regular12.copyWith(
+                          color: AppColors.appGrayColor,
+                          fontWeight: FontWeight.w400
+                      ),
+                    ),
+                    WidthGap(width: 6),
+                    CustomVerticalDivider(),
+                    WidthGap(width: 6),
+
+                    // Clock
+                    SvgPictureWidget(imageUrl: AppImages.clock, height: 12, width: 12),
+                    WidthGap(width: 4),
+                    Text(
+                      time,
+                      style: TextStyles.regular12.copyWith(
+                          color: AppColors.appGrayColor,
+                          fontWeight: FontWeight.w400
+                      ),
+                    ),
+                    WidthGap(width: 6),
+                    CustomVerticalDivider(),
+                    WidthGap(width: 6),
+
+                    // location
+                    SvgPictureWidget(imageUrl: AppImages.location, height: 12, width: 12),
+                    WidthGap(width: 4),
+                    Text(
+                      location,
+                      style: TextStyles.regular12.copyWith(
+                          color: AppColors.appGrayColor,
+                          fontWeight: FontWeight.w400
+                      ),
+                    ),
+                    WidthGap(width: 6),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

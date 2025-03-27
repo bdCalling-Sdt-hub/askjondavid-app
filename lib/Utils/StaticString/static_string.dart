@@ -18,5 +18,6 @@ class AppString {
   static const String reliableTransportation = "Reliable Transportation: A private driver ensures that the individual is transported to all scheduled locations, whether for work, events, or personal errands. Punctuality and reliability are crucial elements in this role";
   static const String securityPersonnelManagement = "Security personnel management involves scheduling, task tracking, and real-time communication via an app, ensuring safety, emergency response, and data privacy for seamless, secure operations.";
   static const String securityPersonnelService = "Security personnel management uses an app for scheduling, task tracking, and real-time communication, ensuring safety, emergency response, and data privacy to maintain seamless, secure, and efficient operations";
+  static const String uploadIdCart = "Make sure the photo contains all the information on the front face of the identity card (the one with your name). Remember the requirements are: - Minimum age: 18 years - Passports are not allowed Legal Notice: To continue with the process, YOU accept that AskJonDavid will perform a background check to create your driving partner account. This verification will be carried out by an Uber provider, it will have a cost that may vary by city and its value will be deducted from your earnings in the first trips on our platform.";
 
 }
