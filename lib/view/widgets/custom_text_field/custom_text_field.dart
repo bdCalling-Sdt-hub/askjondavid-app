@@ -95,7 +95,7 @@ class CustomTextFromField extends StatelessWidget {
       ),
       errorBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: Colors.transparent, // Remove the error border color
+          color: Colors.transparent,
         ),
         borderRadius: BorderRadius.circular(0.0),
       ),

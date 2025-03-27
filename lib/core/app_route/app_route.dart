@@ -32,6 +32,7 @@ import 'package:luxury_car_service/view/module/customer/profile/personal_informa
 import 'package:luxury_car_service/view/module/customer/profile/subscription.dart';
 import 'package:luxury_car_service/view/module/driver/driver_booking/view/driver_reservation_details.dart';
 import 'package:luxury_car_service/view/module/driver/driver_home/driver_landign_screen.dart';
+import 'package:luxury_car_service/view/module/driver/service/view/add_service.dart';
 
 
 class AppRoute {
@@ -69,6 +70,7 @@ class AppRoute {
   static const String privacyPolicy = "/privacy_policy";
   static const String driverLanding = "/driver_landing";
   static const String reservationDetails = "/reservation_details";
+  static const String addService = "/add_service";
 
 
   static List<GetPage> routes = [
@@ -124,5 +126,6 @@ class AppRoute {
     ///===================== Driver Part ===================
     GetPage(name: driverLanding, page: () => DriverLandingScreen(), binding: DependencyInjection()),
     GetPage(name: reservationDetails, page: () => ReservationDetails(), binding: DependencyInjection()),
+    GetPage(name: addService, page: () => AddServiceScreen(), binding: DependencyInjection()),
   ];
 }

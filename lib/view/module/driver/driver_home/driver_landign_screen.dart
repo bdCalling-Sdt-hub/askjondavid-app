@@ -10,6 +10,7 @@ import 'package:luxury_car_service/view/module/customer/chat/view/chat_list.dart
 import 'package:luxury_car_service/view/module/customer/home/controller/home_controller.dart';
 import 'package:luxury_car_service/view/module/driver/driver_booking/view/driver_booking.dart';
 import 'package:luxury_car_service/view/module/driver/driver_home/driver_profile.dart';
+import 'package:luxury_car_service/view/module/driver/service/view/service_screen.dart';
 import 'package:luxury_car_service/view/widgets/custom_sizedbox/custom_sizedbox.dart';
 class DriverLandingScreen extends StatelessWidget {
   DriverLandingScreen({super.key});
@@ -37,7 +38,7 @@ class DriverLandingScreen extends StatelessWidget {
               index: _homeController.currentIndex.value,
               children: [
                 DriverBookingScreen(),
-                BookingScreen(),
+                DriverService(),
                 ChatList(),
                 DriverProfileScreen()
               ],

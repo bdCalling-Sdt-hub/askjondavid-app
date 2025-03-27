@@ -5,6 +5,7 @@ import 'package:luxury_car_service/Utils/AppImg/app_img.dart';
 import 'package:luxury_car_service/Utils/Texts/text_style.dart';
 import 'package:luxury_car_service/core/app_route/app_route.dart';
 import 'package:luxury_car_service/view/module/customer/chat/chat_widget/chat_list_widget.dart';
+import 'package:luxury_car_service/view/module/customer/home/home_widget/app_bar_without_button.dart';
 import 'package:luxury_car_service/view/widgets/custom_sizedbox/custom_sizedbox.dart';
 
 class ChatList extends StatelessWidget {
@@ -24,10 +25,8 @@ class ChatList extends StatelessWidget {
           child: Column(
             children: [
               HeightGap(height: 24),
-              Center(child: Text('Chat', style: TextStyles.regular24.copyWith(
-                fontWeight: FontWeight.w500,
-                color: Color(0xFFDBDBDB)
-              ),)),
+              // AppBar
+              AppBarWithoutButton(text: 'Chat',),
               HeightGap(height: 35),
               Expanded(
                 child: Padding(
@@ -63,3 +62,4 @@ class ChatList extends StatelessWidget {
     );
   }
 }
+

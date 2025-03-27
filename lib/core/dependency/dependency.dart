@@ -3,6 +3,7 @@ import 'package:luxury_car_service/view/module/common/auth/controller/auth_contr
 import 'package:luxury_car_service/view/module/common/onboarding/controller/onboarding_controller.dart';
 import 'package:luxury_car_service/view/module/customer/chat/controller/chat_controller.dart';
 import 'package:luxury_car_service/view/module/customer/home/controller/home_controller.dart';
+import 'package:luxury_car_service/view/module/driver/service/controller/service_controller.dart';
 
 class DependencyInjection extends Bindings {
   @override
@@ -19,6 +20,9 @@ class DependencyInjection extends Bindings {
 
     ///================ Chat Controller =================
     Get.lazyPut(() => ChatController(), fenix: true);
+
+    ///================ Service Controller =================
+    Get.lazyPut(() => ServiceController(), fenix: true);
 
   }
 }
