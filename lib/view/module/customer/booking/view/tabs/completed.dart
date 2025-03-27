@@ -17,7 +17,9 @@ class Completed extends StatelessWidget {
         itemBuilder: (context, index){
           return GestureDetector(
             onTap: (){
-              Get.toNamed(AppRoute.orderDetails);
+              Get.toNamed(AppRoute.orderDetails, arguments: {
+                "completed":true
+              });
             },
             child: BookingCartWidget(
               imgUrl: "https://www.shutterstock.com/image-photo/smiling-african-american-millennial-businessman-600nw-1437938108.jpg",

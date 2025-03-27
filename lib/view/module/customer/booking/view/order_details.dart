@@ -13,6 +13,8 @@ class OrderDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool? completed =  Get.arguments?['completed'];
+
     return Scaffold(
       backgroundColor: AppColors.appBg,
       body: SafeArea(
@@ -77,7 +79,7 @@ class OrderDetailsScreen extends StatelessWidget {
                       HeightGap(height: 28),
                       _orderDetails(context, "Total Amount", "\$715.89"),
                       HeightGap(height: 30),
-                      Padding(
+                      if(completed==true)Padding(
                         padding: const EdgeInsets.only(right: 16.0),
                         child: Align(
                           alignment: Alignment.centerRight,
