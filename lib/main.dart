@@ -5,19 +5,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:luxury_car_service/core/app_route/app_route.dart';
 import 'package:luxury_car_service/core/dependency/dependency.dart';
-import 'package:luxury_car_service/view/module/common/splash/screen_one.dart';
 
 void main() {
   DependencyInjection di = DependencyInjection();
   di.dependencies();
   WidgetsFlutterBinding.ensureInitialized();
-  // runApp(const LuxuryCarService());
-  runApp(
-    DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) => LuxuryCarService(), // Wrap your app
-    ),
-  );
+  runApp(const LuxuryCarService());
+  // runApp(
+  //   DevicePreview(
+  //     enabled: !kReleaseMode,
+  //     builder: (context) => LuxuryCarService(), // Wrap your app
+  //   ),
+  // );
 }
 
 class LuxuryCarService extends StatelessWidget {
