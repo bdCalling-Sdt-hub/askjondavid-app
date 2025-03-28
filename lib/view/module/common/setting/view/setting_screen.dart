@@ -16,7 +16,7 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.appBg,
+      backgroundColor: Colors.transparent,
       body: SafeArea(
         child: Container(
           decoration: BoxDecoration(

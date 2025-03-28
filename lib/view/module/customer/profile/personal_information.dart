@@ -15,6 +15,7 @@ class PersonalInformation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: SafeArea(
         child: Container(
           height: double.infinity,
@@ -69,10 +70,15 @@ class PersonalInformation extends StatelessWidget {
               SvgPictureWidget(
                   imageUrl: icon, height: 16, width: 16),
               WidthGap(width: 8.w),
-              Text(
-                title,
-                style: TextStyles.regular16.copyWith(
-                    fontWeight: FontWeight.w400, color: Color(0xFFB8B8B8)),
+              SizedBox(
+                width: 300.w,
+                child: Text(
+                  overflow: TextOverflow.fade,
+                  maxLines: 2,
+                  title,
+                  style: TextStyles.regular16.copyWith(
+                      fontWeight: FontWeight.w400, color: Color(0xFFB8B8B8)),
+                ),
               )
             ],
           ),

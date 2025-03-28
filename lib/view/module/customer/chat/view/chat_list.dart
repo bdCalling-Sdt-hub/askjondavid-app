@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:luxury_car_service/Utils/AppColors/app_colors.dart';
 import 'package:luxury_car_service/Utils/AppImg/app_img.dart';
 import 'package:luxury_car_service/Utils/Texts/text_style.dart';
 import 'package:luxury_car_service/core/app_route/app_route.dart';
@@ -14,6 +15,7 @@ class ChatList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: SafeArea(
         child: Container(
           height: double.infinity,
@@ -39,7 +41,7 @@ class ChatList extends StatelessWidget {
                             Get.toNamed(AppRoute.messageScreen);
                           },
                           child: Container(
-                            height: 70.h,
+                            height: 73.h,
                             width: double.infinity,
                             child: ChatListWidget(
                               image: "https://www.shutterstock.com/image-photo/profile-picture-smiling-young-african-260nw-1873784920.jpg",

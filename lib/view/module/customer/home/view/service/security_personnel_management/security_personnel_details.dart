@@ -343,6 +343,7 @@ class SecurityPersonnelDetails extends StatelessWidget {
       child: TabBarView(
         physics: const NeverScrollableScrollPhysics(),
         children: [
+          // all
           Center(
             child: Container(
               child: Text(
@@ -354,6 +355,7 @@ class SecurityPersonnelDetails extends StatelessWidget {
               ),
             ),
           ),
+          // schedule
           Center(
               child: SingleChildScrollView(
             child: Column(
@@ -370,7 +372,7 @@ class SecurityPersonnelDetails extends StatelessWidget {
                 Obx(() {
                   final homeController = Get.find<HomeController>();
                   return Container(
-                    height: 52.h,
+                    height: 58.h,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         color: Color(0xFF18181A)),
@@ -432,7 +434,7 @@ class SecurityPersonnelDetails extends StatelessWidget {
                 Obx(() {
                   final homeController = Get.find<HomeController>();
                   return Container(
-                    height: 52.h,
+                    height: 58.h,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         color: Color(0xFF18181A)),

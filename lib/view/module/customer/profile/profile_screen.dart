@@ -15,6 +15,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: SafeArea(
         child: Container(
           height: double.infinity,
@@ -23,33 +24,35 @@ class ProfileScreen extends StatelessWidget {
               image: DecorationImage(
                   image: AssetImage(AppImages.backgroundImage),
                   fit: BoxFit.cover)),
-          child: Column(
-            children: [
-              HeightGap(height: 24),
-              _appBar(),
-              HeightGap(height: 23),
-              // profile image
-              profileImage(),
-              HeightGap(height: 12),
-              // name
-              Text("Ethan Michael",
-                  style: TextStyles.regular24.copyWith(
-                      fontWeight: FontWeight.w500, color: Color(0xFFDEDEDE))),
-              HeightGap(height: 50.h),
-              _profileCart(AppImages.profileIcon, "Personal Information", () {
-                Get.toNamed(AppRoute.personalInformation);
-              }),
-              HeightGap(height: 28.h),
-              _profileCart(AppImages.subscription, "Subscriptions", () {
-                Get.toNamed(AppRoute.subscription);
-              }),
-              HeightGap(height: 28.h),
-              _profileCart(AppImages.setting, "Settings", () {
-                Get.toNamed(AppRoute.settingScreen);
-              }),
-              HeightGap(height: 100.h),
-              _logOut()
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                HeightGap(height: 24),
+                _appBar(),
+                HeightGap(height: 23),
+                // profile image
+                profileImage(),
+                HeightGap(height: 12),
+                // name
+                Text("Ethan Michael",
+                    style: TextStyles.regular24.copyWith(
+                        fontWeight: FontWeight.w500, color: Color(0xFFDEDEDE))),
+                HeightGap(height: 50.h),
+                _profileCart(AppImages.profileIcon, "Personal Information", () {
+                  Get.toNamed(AppRoute.personalInformation);
+                }),
+                HeightGap(height: 28.h),
+                _profileCart(AppImages.subscription, "Subscriptions", () {
+                  Get.toNamed(AppRoute.subscription);
+                }),
+                HeightGap(height: 28.h),
+                _profileCart(AppImages.setting, "Settings", () {
+                  Get.toNamed(AppRoute.settingScreen);
+                }),
+                HeightGap(height: 100.h),
+                _logOut()
+              ],
+            ),
           ),
         ),
       ),

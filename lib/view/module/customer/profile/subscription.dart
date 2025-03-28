@@ -14,6 +14,7 @@ class Subscription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: SafeArea(
         child: Container(
           height: double.infinity,
@@ -22,66 +23,68 @@ class Subscription extends StatelessWidget {
               image: DecorationImage(
                   image: AssetImage(AppImages.backgroundImage),
                   fit: BoxFit.cover)),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              HeightGap(height: 24),
-              CustomAppBar(
-                  onTap: () {
-                    Get.back();
-                  },
-                  title: "Subscriptions"),
-              HeightGap(height: 90.h),
-              Align(
-                alignment: Alignment.center,
-                child: Text(
-                  'Personal Driver & Concierge Service',
-                  style: TextStyles.regular16.copyWith(
-                      fontWeight: FontWeight.w500, color: AppColors.appGrayColor),
-                ),
-              ),
-              HeightGap(height: 24),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    "\$2,999",
-                    style: TextStyles.regular32.copyWith(
-                        fontWeight: FontWeight.w600, color: Color(0xFFDBCC93)),
-                  ),
-                  Text(
-                    "/monthly",
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                HeightGap(height: 24),
+                CustomAppBar(
+                    onTap: () {
+                      Get.back();
+                    },
+                    title: "Subscriptions"),
+                HeightGap(height: 70.h),
+                Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Personal Driver & Concierge Service',
                     style: TextStyles.regular16.copyWith(
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.appGrayColor),
+                        fontWeight: FontWeight.w500, color: AppColors.appGrayColor),
                   ),
-                ],
-              ),
-              HeightGap(height: 40.h),
-              // Inclusion
-              _inclusion(),
-              // Benefit
-              _benifit(),
-              
-              // Start date and end date
-              HeightGap(height: 30.h),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Text("Start date : 04/12/2024", style: TextStyles.regular12.copyWith(
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xFFB8B8B8)
-                ),),
-              ),
-              HeightGap(height: 10.h),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Text("End date : 08/12/2024", style: TextStyles.regular12.copyWith(
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xFFB8B8B8)
-                ),),
-              ),
-            ],
+                ),
+                HeightGap(height: 24),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "\$2,999",
+                      style: TextStyles.regular32.copyWith(
+                          fontWeight: FontWeight.w600, color: Color(0xFFDBCC93)),
+                    ),
+                    Text(
+                      "/monthly",
+                      style: TextStyles.regular16.copyWith(
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.appGrayColor),
+                    ),
+                  ],
+                ),
+                HeightGap(height: 40.h),
+                // Inclusion
+                _inclusion(),
+                // Benefit
+                _benifit(),
+
+                // Start date and end date
+                HeightGap(height: 30.h),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text("Start date : 04/12/2024", style: TextStyles.regular12.copyWith(
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFFB8B8B8)
+                  ),),
+                ),
+                HeightGap(height: 10.h),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text("End date : 08/12/2024", style: TextStyles.regular12.copyWith(
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFFB8B8B8)
+                  ),),
+                ),
+              ],
+            ),
           ),
         ),
       ),
